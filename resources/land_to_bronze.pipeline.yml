@@ -8,7 +8,7 @@ resources:
       target: bronze
       libraries:
         - notebook:
-            path: ../src/pipeline/land_to_bronze.ipynb
+            path: ../src/pipeline/ingest/land_to_bronze.ipynb
       configuration:
         bundle.sourcePath: ${workspace.file_path}/src
         source: /Volumes/project/bronze/landing

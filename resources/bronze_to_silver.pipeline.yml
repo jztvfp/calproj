@@ -8,7 +8,7 @@ resources:
       target: silver
       libraries:
         - notebook:
-            path: ../src/pipeline/bronze_to_silver.ipynb
+            path: ../src/pipeline/transform/bronze_to_silver.ipynb
       configuration:
         bundle.sourcePath: ${workspace.file_path}/src
       clusters:
