@@ -1,0 +1,34 @@
+# The main job for ian_cal.
+resources:
+  jobs:
+    Turbine_Data_Load:
+      name: Turbine Data Load
+      tasks:
+        - task_key: Ingestion
+          pipeline_task:
+            pipeline_id: 8f3fb8c1-179c-40a4-9f14-c44186148dfe
+            full_refresh: false
+        - task_key: Transform
+          depends_on:
+            - task_key: Ingestion
+          pipeline_task:
+            pipeline_id: ffabc229-d20d-4bc7-be6c-3c345cdb8202
+            full_refresh: false
+        - task_key: Presentation
+          depends_on:
+            - task_key: Transform
+          sql_task:
+            file:
+              path: /Workspace/Users/jztvfp@hotmail.com/Project/ian_cal/src/database/project.gold.mv_turbine_data.sql
+              source: WORKSPACE
+            warehouse_id: c9a1cd585fc96ff9
+      queue:
+        enabled: true
+      job_clusters:
+        - job_cluster_key: job_cluster
+          new_cluster:
+            spark_version: 15.4.x-scala2.12
+            node_type_id: Standard_D3_v2
+            autoscale:
+                min_workers: 1
+                max_workers: 2

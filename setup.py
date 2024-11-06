@@ -11,7 +11,7 @@ import sys
 sys.path.append('./src')
 
 import datetime
-import ian_cal
+import utility
 
 setup(
     name="ian_cal",
@@ -25,7 +25,7 @@ setup(
     package_dir={'': 'src'},
     entry_points={
         "packages": [
-            "main=ian_cal.main:main"
+            "main=ian_cal.utility:helper"
         ]
     },
     install_requires=[
