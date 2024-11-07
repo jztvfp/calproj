@@ -21,8 +21,8 @@ targets:
     mode: production
     workspace:
       host: 
-      # We explicitly specify /Workspace/Users/jztvfp@hotmail.com to make sure we only have a single copy.
-      root_path: /Workspace/Users/jztvfp@hotmail.com/.bundle/${bundle.name}/${bundle.target}
+      # We explicitly specify /Workspace/Users/ to make sure we only have a single copy.
+      root_path: /Workspace/Users//.bundle/${bundle.name}/${bundle.target}
     permissions:
       - user_name: 
         level: CAN_MANAGE
