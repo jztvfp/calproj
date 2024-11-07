@@ -19,7 +19,7 @@ setup(
     # to ensure that changes to wheel package are picked up when used on all-purpose clusters
     version=ian_cal.__version__ + "+" + datetime.datetime.utcnow().strftime("%Y%m%d.%H%M%S"),
     url="https://databricks.com",
-    author="jztvfp@hotmail.com",
+    author=,
     description="wheel file based on ian_cal/src",
     packages=find_packages(where='./src'),
     package_dir={'': 'src'},
