@@ -7,7 +7,7 @@ resources:
         source: /Volumes/project/bronze/source_data
       libraries:
         - notebook:
-            path: /Users/jztvfp@hotmail.com/Project/ian_cal/src/pipeline/ingest/land_to_bronze
+            path: /Users//Project/ian_cal/src/pipeline/ingest/land_to_bronze
       target: bronze
       development: true
       photon: true
