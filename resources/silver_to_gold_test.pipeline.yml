@@ -8,7 +8,7 @@ resources:
         target_table: mv_turbine_data_test
       libraries:
         - notebook:
-            path: /Users/jztvfp@hotmail.com/Project/ian_cal/src/pipeline/present/silver_to_gold
+            path: /Users//Project/ian_cal/src/pipeline/present/silver_to_gold
       target: gold
       development: true
       photon: true
