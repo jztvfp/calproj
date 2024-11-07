@@ -15,16 +15,16 @@ targets:
     mode: development
     default: true
     workspace:
-      host: https://adb-5912632042464944.4.azuredatabricks.net
+      host: 
 
   prod:
     mode: production
     workspace:
-      host: https://adb-5912632042464944.4.azuredatabricks.net
+      host: 
       # We explicitly specify /Workspace/Users/jztvfp@hotmail.com to make sure we only have a single copy.
       root_path: /Workspace/Users/jztvfp@hotmail.com/.bundle/${bundle.name}/${bundle.target}
     permissions:
-      - user_name: jztvfp@hotmail.com
+      - user_name: 
         level: CAN_MANAGE
     run_as:
-      user_name: jztvfp@hotmail.com
+      user_name: 
