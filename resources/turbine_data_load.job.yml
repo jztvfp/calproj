@@ -19,7 +19,7 @@ resources:
             - task_key: Transform
           sql_task:
             file:
-              path: /Workspace/Users/jztvfp@hotmail.com/Project/ian_cal/src/database/project.gold.mv_turbine_data.sql
+              path: /Workspace/Users//Project/ian_cal/src/database/project.gold.mv_turbine_data.sql
               source: WORKSPACE
             warehouse_id: c9a1cd585fc96ff9
       queue:
