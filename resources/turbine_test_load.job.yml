@@ -1,34 +1,35 @@
 # The main job for ian_cal.
 resources:
   jobs:
-    Turbine_Data_Load:
-      name: Turbine Data Load
+     Turbine_Test_Load:
+      name: Turbine Test Load
       tasks:
-        - task_key: Ingestion
+        - task_key: Ingest
           pipeline_task:
-            pipeline_id: 8f3fb8c1-179c-40a4-9f14-c44186148dfe
+            pipeline_id: f88e2606-ca6a-41cb-b732-c84ae40bb65f
             full_refresh: false
         - task_key: Transform
           depends_on:
-            - task_key: Ingestion
+            - task_key: Ingest
           pipeline_task:
-            pipeline_id: ffabc229-d20d-4bc7-be6c-3c345cdb8202
+            pipeline_id: f84eb06b-5b5a-4e36-8ced-fa789e937364
             full_refresh: false
-        - task_key: Presentation
+        - task_key: Present
           depends_on:
             - task_key: Transform
-          sql_task:
-            file:
-              path: /Workspace/Users/jztvfp@hotmail.com/Project/ian_cal/src/database/project.gold.mv_turbine_data.sql
-              source: WORKSPACE
-            warehouse_id: c9a1cd585fc96ff9
+          pipeline_task:
+            pipeline_id: e7a10030-7b0d-4f65-b8b2-14897c6a1686
+            full_refresh: false
+        - task_key: Test_Layer_Tables
+          depends_on:
+            - task_key: Present
+          pipeline_task:
+            pipeline_id: 1a4c6378-5708-440e-8c45-623fc393c9a7
       queue:
         enabled: true
-      job_clusters:
-        - job_cluster_key: job_cluster
-          new_cluster:
-            spark_version: 15.4.x-scala2.12
-            node_type_id: Standard_D3_v2
-            autoscale:
-                min_workers: 1
-                max_workers: 2
+      environments:
+        - environment_key: dbt-default
+          spec:
+            client: "1"
+            dependencies:
+              - dbt-databricks>=1.0.0,<2.0.0
