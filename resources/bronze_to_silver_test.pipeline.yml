@@ -1,11 +1,11 @@
 # The main pipeline for ian_cal
 resources:
   pipelines:
-    pipeline_2_transformation:
-      name: 2 - Transformation
+    pipeline_2_transformation_test:
+      name: 2 - Transformation - Test
       configuration:
-        source_table: project.bronze.turbine_data
-        target_table: turbine_data
+        source_table: project.bronze.turbine_data_test
+        target_table: turbine_data_test
       libraries:
         - notebook:
             path: /Users/jztvfp@hotmail.com/Project/ian_cal/src/pipeline/transform/bronze_to_silver

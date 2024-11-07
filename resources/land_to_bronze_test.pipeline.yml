@@ -1,18 +1,15 @@
 # The main pipeline for 
 resources:
   pipelines:
-    land_to_bronze_test_pipeline:
-      name: land_to_bronze_test
-      ## Specify the 'catalog' field to configure this pipeline to make use of Unity Catalog:
-      catalog: project
-      target: bronze
+    pipeline_1_ingestion_test:
+      name: 1 - Ingestion - Test
+      configuration:
+        source: /Volumes/project/bronze/test_data
       libraries:
         - notebook:
-            path: ../src/pipeline/ingest/land_to_bronze.ipynb
-      configuration:
-        bundle.sourcePath: ${workspace.file_path}/src
-        source: /Volumes/project/bronze/landing
-      clusters:
-        - label: default
-          node_type_id: Standard_D4ads_v5
-          num_workers: 1
+            path: /Users/jztvfp@hotmail.com/Project/ian_cal/src/pipeline/ingest/land_to_bronze_test
+      target: bronze
+      development: true
+      photon: true
+      catalog: project
+      serverless: true
