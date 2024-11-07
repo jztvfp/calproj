@@ -8,7 +8,7 @@ resources:
         target_table: turbine_data_test
       libraries:
         - notebook:
-            path: /Users/jztvfp@hotmail.com/Project/ian_cal/src/pipeline/transform/bronze_to_silver
+            path: /Users//Project/ian_cal/src/pipeline/transform/bronze_to_silver
       target: silver
       development: true
       photon: true
